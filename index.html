@@ -5,15 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Task Board</title>
+    <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles.css">
-
-    <script src="./script.js"></script>
+    <!-- Font awesome icons CDN -->
+    <script src="https://kit.fontawesome.com/e7acd4a9a6.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <h1 id="title">My Task Board</h1>
 
+    <div id="input-note">
+        <button class="clear-note" onclick="clearNote()"><i class="fas fa-eraser fa-2x"></i></button>
+        <input type="text" class="note-inputs" id="note-data-input" placeholder="Enter your note here" required>
+        <input type="date" class="note-inputs" id="note-date-input" required>
+        <input type="time" class="note-inputs" id="note-time-input">
+        <button class="add-note" onclick="addNote()"><i class="fas fa-plus-square fa-2x"></i></button>
+    </div>
+
+    <div id="notes-div">
+        <!-- <div class="note">
+            <button class="delete-note"><i class="fas fa-times-circle"></i></button>
+            <p id="note-data"> efd gs dg sfdg</p>
+            <p id="note-date"> fgd fgds fg d</p>
+            <p id="note-time">f g dsf s</p>
+        </div> -->
+    </div>
+
+
+
+    <script src="./script.js"></script>
 </body>
 
 </html>
