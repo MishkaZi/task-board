@@ -15,16 +15,23 @@
 
 <body>
     <h1 id="title">My Task Board</h1>
-
+    <!-- Bootstrap alert -->
+    <div class="container-fluid d-flex justify-content-center ">
+        <div class="alert col-6 text-center hidden-alert" id="alert-error" role="alert">
+            <button type="button" class="close" onclick="closeAlert()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h2> Your note and date required! <br>Date only from next day, today go and do your chores now! </h2>
+        </div>
+    </div>
     <div id="input-note">
         <button class="clear-note" onclick="clearNote()"><i class="fas fa-eraser fa-2x"></i></button>
-        <input type="text" class="note-inputs" id="note-data-input" placeholder="Enter your note here" required>
-        <input type="date" class="note-inputs" id="note-date-input" required>
+        <input type="text" class="note-inputs" id="note-data-input" placeholder="Enter your note here">
+        <input type="date" class="note-inputs" id="note-date-input">
         <input type="time" class="note-inputs" id="note-time-input">
         <button class="add-note" onclick="addNote()"><i class="fas fa-plus-square fa-2x"></i></button>
-    </div>
 
-    <!-- Use of bootstrap :) -->
+    </div>
     <div id="notes-div" class="row"></div>
     <script src="./script.js"></script>
 </body>

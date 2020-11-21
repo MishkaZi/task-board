@@ -4,6 +4,8 @@ const noteTime = document.getElementById('note-time-input');
 
 const NoteDiv = document.getElementById('notes-div');
 
+const alertError = document.getElementById('alert-error');
+
 let parsedListOfNotes = [];
 
 //Load from local storage
@@ -40,6 +42,15 @@ function printNoteToScreen(noteHTML) {
     NoteDiv.appendChild(tempDivToInsert);
 }
 
+function dismissAlert() {
+    alertError.classList.remove('fade-in');
+    alertError.classList.add('fade-out');
+
+    setTimeout(() => {
+        alertError.classList.add('hidden-alert');
+        alertError.classList.remove('fade-out');
+    }, 600);
+}
 
 //Generating random id function
 function getRandomID() {
@@ -66,7 +77,9 @@ notesDisplay();
 
 //Adding new note to notes list
 function addNote() {
-    if (noteData.value !== '' && noteDate.value !== '') {
+    const inputedDate = new Date(noteDate.value);
+    if (noteData.value !== '' && noteDate.value !== '' && inputedDate > Date.now()) {
+        dismissAlert();
         parsedListOfNotes = loadFromLocalStorage();
         var randomID = getRandomID();
 
@@ -86,7 +99,9 @@ function addNote() {
         saveToLocalStorage(parsedListOfNotes);
         clearNote();
     } else {
-        alert('Please enter your note and date! Its required :)');
+        alertError.classList.add('fade-in');
+        alertError.classList.remove('hidden-alert');
+
     }
 }
 
@@ -110,4 +125,11 @@ function clearNote() {
     noteData.value = '';
     noteDate.value = '';
     noteTime.value = '';
+
+}
+
+
+//Closing alert
+function closeAlert() {
+    dismissAlert();
 }
