@@ -74,7 +74,6 @@ function notesDisplay() {
 
 notesDisplay();
 
-
 //Adding new note to notes list
 function addNote() {
     const inputedDate = new Date(noteDate.value);

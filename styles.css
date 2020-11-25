@@ -93,6 +93,7 @@ body {
   overflow-y: auto;
   text-align: center;
   font-size: 1.5rem;
+  word-break: break-word;
 }
 
 #note-date {
@@ -172,7 +173,4 @@ body {
     width: 90%;
     left: 5%;
   }
-  /* #alert-error {
-    font-size: 1rem;
-  } */
 }
