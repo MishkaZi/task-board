@@ -116,7 +116,7 @@ function deleteNote(button) {
             saveToLocalStorage(parsedListOfNotes);
         }
     }
-
+    dismissAlert();
 }
 
 //Clear inpute note function
@@ -124,11 +124,5 @@ function clearNote() {
     noteData.value = '';
     noteDate.value = '';
     noteTime.value = '';
-
-}
-
-
-//Closing alert
-function closeAlert() {
     dismissAlert();
 }
